@@ -1,4 +1,4 @@
-from functions import add, delete
+from functions import add, delete, get
 
 
 
@@ -9,21 +9,19 @@ numbers = {
 }
 #add
 while True:
-    key = input()
+    key = input('Введите ключ функции: ')
     if key == "add":
         numbers = add.person(numbers)
 
     if key == 'delete':
         numbers = delete.person(numbers)
-    print(numbers)
 
     if key == 'get one':
-        print(numbers.get(verify.name((input('Введите имя: ')))))
+        get.one_number(numbers)
 
 
     if key == 'get all':
-        for name, number in numbers.items():
-            print(name,':',number,end = ', ')
+        get.all_numbers(numbers)
 #
 #     if key == 'delete all':
 #         numbers.clear()
