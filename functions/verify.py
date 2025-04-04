@@ -1,4 +1,4 @@
-def verify_number(numbers):
+def number(numbers):
     correct_number = []
     numbers = numbers.replace(" ", "")
     numbers = numbers.replace("+7", "8")
@@ -8,6 +8,6 @@ def verify_number(numbers):
     return correct_number
 
 
-def verify_name(name: str) -> str:
-    name = name[0].upper() + name[1:len(name)].lower()
-    return name
+def name(name_of_person: str) -> str:
+    name_of_person = name_of_person[0].upper() + name_of_person[1:len(name_of_person)].lower()
+    return name_of_person
