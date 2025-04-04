@@ -14,7 +14,7 @@ while True:
         numbers = add.person(numbers)
 
     if key == 'delete':
-        numbers = delete.person(numbers)
+        numbers = delete.one(numbers)
 
     if key == 'get one':
         get.one_number(numbers)
@@ -23,9 +23,10 @@ while True:
     if key == 'get all':
         get.all_numbers(numbers)
 #
-#     if key == 'delete all':
-#         numbers.clear()
-#     # print(numbers)
+    if key == 'delete all':
+        numbers = delete.all(numbers)
+
+#
 #
 #     if key == 'f': #edit_name
 #         print(numbers.keys())
