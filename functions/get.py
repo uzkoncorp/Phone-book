@@ -1,6 +1,8 @@
 from functions.verify import name
+
+
 def one_number(numbers):
-    print(numbers.keys())
+    print(*numbers.keys(), sep=', ')
     print(numbers[name(input('Введите имя: '))])
 
 

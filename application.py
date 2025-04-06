@@ -1,17 +1,19 @@
-from functions import add, delete, get
-
-
+from functions import add, delete, get, edit
 
 numbers = {
-    "Алексей": ["89098467577", "7974758"],
-    "Александр": ["78986362"],
-    "Арина": ["7892322737"]
+    "Алексей": ["89098467577", "89747587654"],
+    "Александр": ["89881716274"],
+    "Арина": ["88923227378"]
 }
-#add
+
+help_key = ['add', 'delete_one', 'delete_all', 'get_one', 'get_all', 'edit_name', 'edit_number', 'end']
 while True:
-    key = input('Введите ключ функции: ')
+    key = input('Введите "help",чтобы узнать список команд.\nВведите ключ функции: ')
     if key == "add":
         numbers = add.person(numbers)
+
+    if key == 'help':
+        print(*help_key, sep=', ', end='\n\n')
 
     if key == 'delete':
         numbers = delete.one(numbers)
@@ -19,38 +21,17 @@ while True:
     if key == 'get one':
         get.one_number(numbers)
 
-
     if key == 'get all':
         get.all_numbers(numbers)
-#
+
     if key == 'delete all':
         numbers = delete.all(numbers)
 
-#
-#
-#     if key == 'f': #edit_name
-#         print(numbers.keys())
-#         name = verify.name(input('Введите имя человека, которое хотите поменять: '))
-#         edited_name = verify.name(input('Введите новое имя: '))
-#         numbers[edited_name] = numbers.pop(name)
-#         print(numbers)
-#
-#
-#     if key == 'o': #'edit_number':
-#         print(numbers.keys())
-#         name = verify.name(input('Введите человека, номер которого вы хотите поменять: '))
-#         all_numbers = numbers[name]
-#         print(all_numbers)
-#         number = verify.number(input('Введите номер: '))[0]
-#         edited_number = verify.number(input('Введите новый номер: '))[0]
-#         if edited_number not in all_numbers and number in all_numbers:
-#             print('yes')
-#     print(numbers)
-#
-#
-#
-#
-#
-#     if key == 'end':
-#         break
-# print(numbers)
+    if key == 'edit_name':
+        numbers = edit.edit_name(numbers)
+
+    if key == 'edit_number':
+        numbers = edit.edit_number(numbers)
+
+    if key == 'end':
+        break
